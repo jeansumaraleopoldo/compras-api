@@ -8,7 +8,7 @@ ini_set('error_log', __DIR__.'/error_log.txt');
 error_reporting(E_ALL);
 
 require __DIR__.'/vendor/autoload.php';
-\Betha\Compras\App\Conexao::criar();
+\Betha\Compras\App\Facades\Env::load();
 
 $app = new Slim\Slim([
     'debug' => false
