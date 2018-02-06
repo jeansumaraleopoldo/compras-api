@@ -1,0 +1,18 @@
+[06-Feb-2018 09:00:22 America/Sao_Paulo] PHP Fatal error:  Class 'Engeplus\Atendimento\App\Conexao' not found in C:\wamp\www\compras\api\index.php on line 11
+[06-Feb-2018 09:00:22 America/Sao_Paulo] PHP Stack trace:
+[06-Feb-2018 09:00:22 America/Sao_Paulo] PHP   1. {main}() C:\wamp\www\compras\api\index.php:0
+[06-Feb-2018 09:09:59 America/Sao_Paulo] PHP Fatal error:  Class 'Engeplus\Atendimento\App\Conexao' not found in C:\wamp\www\compras\api\index.php on line 11
+[06-Feb-2018 09:09:59 America/Sao_Paulo] PHP Stack trace:
+[06-Feb-2018 09:09:59 America/Sao_Paulo] PHP   1. {main}() C:\wamp\www\compras\api\index.php:0
+[06-Feb-2018 09:10:02 America/Sao_Paulo] PHP Fatal error:  Class 'Engeplus\Atendimento\App\Conexao' not found in C:\wamp\www\compras\api\index.php on line 11
+[06-Feb-2018 09:10:02 America/Sao_Paulo] PHP Stack trace:
+[06-Feb-2018 09:10:02 America/Sao_Paulo] PHP   1. {main}() C:\wamp\www\compras\api\index.php:0
+[06-Feb-2018 09:10:04 America/Sao_Paulo] PHP Fatal error:  Class 'Engeplus\Atendimento\App\Conexao' not found in C:\wamp\www\compras\api\index.php on line 11
+[06-Feb-2018 09:10:04 America/Sao_Paulo] PHP Stack trace:
+[06-Feb-2018 09:10:04 America/Sao_Paulo] PHP   1. {main}() C:\wamp\www\compras\api\index.php:0
+[06-Feb-2018 09:10:15 America/Sao_Paulo] PHP Warning:  require(C:\wamp\www\compras\api/src/App/Routes/routes.php): failed to open stream: No such file or directory in C:\wamp\www\compras\api\index.php on line 21
+[06-Feb-2018 09:10:15 America/Sao_Paulo] PHP Stack trace:
+[06-Feb-2018 09:10:15 America/Sao_Paulo] PHP   1. {main}() C:\wamp\www\compras\api\index.php:0
+[06-Feb-2018 09:10:15 America/Sao_Paulo] PHP Fatal error:  require(): Failed opening required 'C:\wamp\www\compras\api/src/App/Routes/routes.php' (include_path='.;C:\php\pear') in C:\wamp\www\compras\api\index.php on line 21
+[06-Feb-2018 09:10:15 America/Sao_Paulo] PHP Stack trace:
+[06-Feb-2018 09:10:15 America/Sao_Paulo] PHP   1. {main}() C:\wamp\www\compras\api\index.php:0
