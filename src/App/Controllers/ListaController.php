@@ -2,7 +2,9 @@
 
 namespace Betha\Compras\App\Controllers;
 
+use Betha\Compras\App\Services\ListaService;
 use Betha\Compras\App\Services\ProdutoService;
+use Betha\Compras\Infrastructure\Repositories\ListaRepository;
 use Betha\Compras\Infrastructure\Repositories\ProdutoRepository;
 
 class ListaController extends IController
@@ -11,7 +13,7 @@ class ListaController extends IController
     {
         $dados    = $this->getFormData()['dados'];
         $produtos = (new ProdutoService(new ProdutoRepository()))->getProdutosPorId($dados);
-        var_dump($produtos);
-        exit;
+        $lista    = (new ListaService(new ListaRepository()))->adicionarLista($produtos);
+        return $this->json($lista->toArray());
     }
 }

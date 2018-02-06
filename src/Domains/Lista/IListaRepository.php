@@ -2,12 +2,11 @@
 
 namespace Betha\Compras\Domains\Lista;
 
-use Betha\Compras\Domains\Produto\Produto;
-
 interface IListaRepository
 {
     /**
-     * @param Produto[]
+     * @param array $produtos
+     * @return Lista
      */
     public function adicionarLista(array $produtos);
 }
