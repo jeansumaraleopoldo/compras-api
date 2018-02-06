@@ -22,6 +22,16 @@ class Produto
     private $imagem;
 
     /**
+     * @var float
+     */
+    private $valorTotal;
+
+    /**
+     * @var int
+     */
+    private $quantidade;
+
+    /**
      * @return int
      */
     public function getCodigo()
@@ -90,6 +100,42 @@ class Produto
     public function setImagem($imagem)
     {
         $this->imagem = $imagem;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getValorTotal()
+    {
+        return $this->valorTotal;
+    }
+
+    /**
+     * @param float $valorTotal
+     * @return Produto
+     */
+    public function setValorTotal($valorTotal)
+    {
+        $this->valorTotal = $valorTotal;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+
+    /**
+     * @param int $quantidade
+     * @return Produto
+     */
+    public function setQuantidade($quantidade)
+    {
+        $this->quantidade = $quantidade;
         return $this;
     }
 

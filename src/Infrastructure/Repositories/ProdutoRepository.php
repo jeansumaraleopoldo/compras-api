@@ -11,13 +11,31 @@ use Exception;
 class ProdutoRepository implements IProdutoRepository
 {
     /**
+     * @param $id
+     * @return Produto
+     * @throws Exception
+     */
+    public function getProdutoPorId($id)
+    {
+        $registro = (new ProdutoDao())->encontrar(['id' => $id]);
+        if (is_null($registro)) {
+            throw ExceptionFactory::naoEncontrado('Não foi encontrado nenhum produto.');
+        }
+        return (new Produto())
+            ->setCodigo($registro['id'])
+            ->setNome($registro['nome'])
+            ->setImagem($registro['imagem'])
+            ->setValor($registro['valor']);
+    }
+
+    /**
      * @return array|Produto[]
      * @throws Exception
      */
     public function getProdutos()
     {
         $registros = (new ProdutoDao())->listar(['deleted_at' => null]);
-        if(is_null($registros)){
+        if (is_null($registros)) {
             throw ExceptionFactory::naoEncontrado('Não foi encontrado nenhum produto.');
         }
         return array_map(function ($registro) {
