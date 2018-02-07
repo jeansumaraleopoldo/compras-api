@@ -23,7 +23,7 @@ class ListaProdutoRepository implements IListaProdutoRepository
                 produtos.id as id_produto,
                 lista_produtos.qtd_produto
             FROM lista_produtos
-            INNER JOIN produtos ON produtos.id = lista_produtos.id AND produtos.deleted_at IS NULL
+            INNER JOIN produtos ON produtos.id = lista_produtos.id_produto AND produtos.deleted_at IS NULL
             WHERE id_lista = {$lista->getId()}
        ");
        if(!is_null($registros)){
