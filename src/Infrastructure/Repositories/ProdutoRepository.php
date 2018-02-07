@@ -11,6 +11,23 @@ use Exception;
 class ProdutoRepository implements IProdutoRepository
 {
     /**
+     * @param Produto $produto
+     * @return Produto
+     * @throws Exception
+     */
+    public function adicionarProduto(Produto $produto)
+    {
+        $idProduto = (new ProdutoDao())->adicionar([
+            'nome'   => $produto->getNome(),
+            'valor'  => $produto->getValor()
+        ]);
+        if(is_null($idProduto)){
+            throw ExceptionFactory::erroException('Não foi possível inserir um produto');
+        }
+        return $produto->setCodigo($idProduto);
+    }
+
+    /**
      * @param $id
      * @return Produto
      * @throws Exception
@@ -19,12 +36,11 @@ class ProdutoRepository implements IProdutoRepository
     {
         $registro = (new ProdutoDao())->encontrar(['id' => $id]);
         if (is_null($registro)) {
-            throw ExceptionFactory::naoEncontrado('Não foi encontrado nenhum produto.');
+            throw ExceptionFactory::erroException('Não foi encontrado nenhum produto.');
         }
         return (new Produto())
             ->setCodigo($registro['id'])
             ->setNome($registro['nome'])
-            ->setImagem($registro['imagem'])
             ->setValor($registro['valor']);
     }
 
@@ -36,13 +52,12 @@ class ProdutoRepository implements IProdutoRepository
     {
         $registros = (new ProdutoDao())->listar(['deleted_at' => null]);
         if (is_null($registros)) {
-            throw ExceptionFactory::naoEncontrado('Não foi encontrado nenhum produto.');
+            throw ExceptionFactory::erroException('Não foi encontrado nenhum produto.');
         }
         return array_map(function ($registro) {
             return (new Produto())
                 ->setCodigo($registro['id'])
                 ->setNome($registro['nome'])
-                ->setImagem($registro['imagem'])
                 ->setValor($registro['valor']);
         }, $registros);
     }

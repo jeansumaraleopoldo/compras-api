@@ -6,7 +6,7 @@ use Exception;
 
 class ExceptionFactory
 {
-    public static function naoEncontrado($mensagem)
+    public static function erroException($mensagem)
     {
         return new Exception($mensagem);
     }

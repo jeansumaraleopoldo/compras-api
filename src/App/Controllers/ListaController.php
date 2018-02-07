@@ -9,11 +9,28 @@ use Betha\Compras\Infrastructure\Repositories\ProdutoRepository;
 
 class ListaController extends IController
 {
+    private $listaService;
+
+    public function __construct()
+    {
+        $this->listaService = new ListaService(new ListaRepository());
+    }
+
     public function adicionarLista()
     {
-        $dados    = $this->getFormData()['dados'];
+        $dados = $this->getFormData()['dados'];
         $produtos = (new ProdutoService(new ProdutoRepository()))->getProdutosPorId($dados);
-        $lista    = (new ListaService(new ListaRepository()))->adicionarLista($produtos);
+        $lista = $this->listaService->adicionarLista($produtos);
         return $this->json($lista->toArray());
+    }
+
+    public function buscarListas()
+    {
+        return $this->json($this->listaService->buscarListas());
+    }
+
+    public function buscarListaPorId($id)
+    {
+        return $this->json($this->listaService->buscarListaPorId($id)->toArray());
     }
 }

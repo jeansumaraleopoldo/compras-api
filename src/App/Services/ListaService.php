@@ -10,6 +10,10 @@ class ListaService
 {
     private $listaRepository;
 
+    /**
+     * ListaService constructor.
+     * @param IListaRepository $listaRepository
+     */
     public function __construct(IListaRepository $listaRepository)
     {
         $this->listaRepository = $listaRepository;
@@ -22,5 +26,24 @@ class ListaService
     public function adicionarLista(array $produtos)
     {
         return $this->listaRepository->adicionarLista($produtos);
+    }
+
+    /**
+     * @return array
+     */
+    public function buscarListas()
+    {
+        return array_map(function (Lista $lista){
+            return $lista->toArray();
+        }, $this->listaRepository->buscarListas());
+    }
+
+    /**
+     * @param $id
+     * @return Lista
+     */
+    public function buscarListaPorId($id)
+    {
+        return $this->listaRepository->buscarListaPorId($id);
     }
 }

@@ -15,6 +15,15 @@ class ProdutoService
     }
 
     /**
+     * @param Produto $produto
+     * @return Produto
+     */
+    public function adicionarProduto(Produto $produto)
+    {
+        return $this->produtoRepository->adicionarProduto($produto);
+    }
+
+    /**
      * @return Produto[]
      */
     public function getProdutos()

@@ -16,10 +16,6 @@ class Produto
      * @var double
      */
     private $valor;
-    /**
-     * @var string
-     */
-    private $imagem;
 
     /**
      * @var float
@@ -86,24 +82,6 @@ class Produto
     }
 
     /**
-     * @return string
-     */
-    public function getImagem()
-    {
-        return $this->imagem;
-    }
-
-    /**
-     * @param string $imagem
-     * @return Produto
-     */
-    public function setImagem($imagem)
-    {
-        $this->imagem = $imagem;
-        return $this;
-    }
-
-    /**
      * @return float
      */
     public function getValorTotal()
@@ -142,10 +120,10 @@ class Produto
     public function toArray()
     {
         return [
-            'id'     => $this->getCodigo(),
-            'nome'   => $this->getNome(),
-            'valor'  => $this->getValor(),
-            'imagem' => $this->getImagem()
+            'id'         => $this->getCodigo(),
+            'nome'       => $this->getNome(),
+            'valor'      => $this->getValor(),
+            'quantidade' => $this->getQuantidade()
         ];
     }
 }

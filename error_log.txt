@@ -16,3 +16,36 @@
 [06-Feb-2018 09:10:15 America/Sao_Paulo] PHP Fatal error:  require(): Failed opening required 'C:\wamp\www\compras\api/src/App/Routes/routes.php' (include_path='.;C:\php\pear') in C:\wamp\www\compras\api\index.php on line 21
 [06-Feb-2018 09:10:15 America/Sao_Paulo] PHP Stack trace:
 [06-Feb-2018 09:10:15 America/Sao_Paulo] PHP   1. {main}() C:\wamp\www\compras\api\index.php:0
+[06-Feb-2018 20:04:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidPathException: Unable to read the environment file at C:\xampp\htdocs\compras\api\src\App\Facades/../../../\.env. in C:\xampp\htdocs\compras\api\vendor\vlucas\phpdotenv\src\Loader.php:75
+Stack trace:
+#0 C:\xampp\htdocs\compras\api\vendor\vlucas\phpdotenv\src\Loader.php(52): Dotenv\Loader->ensureFileIsReadable()
+#1 C:\xampp\htdocs\compras\api\vendor\vlucas\phpdotenv\src\Dotenv.php(91): Dotenv\Loader->load()
+#2 C:\xampp\htdocs\compras\api\vendor\vlucas\phpdotenv\src\Dotenv.php(48): Dotenv\Dotenv->loadData()
+#3 C:\xampp\htdocs\compras\api\src\App\Facades\Env.php(11): Dotenv\Dotenv->load()
+#4 C:\xampp\htdocs\compras\api\index.php(11): Betha\Compras\App\Facades\Env::load()
+#5 {main}
+  thrown in C:\xampp\htdocs\compras\api\vendor\vlucas\phpdotenv\src\Loader.php on line 75
+[06-Feb-2018 21:05:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function toArray() on null in C:\xampp\htdocs\compras\api\src\App\Controllers\ProdutoController.php:22
+Stack trace:
+#0 C:\xampp\htdocs\compras\api\src\App\Routes\routes.php(14): Betha\Compras\App\Controllers\ProdutoController->adicionarProduto()
+#1 [internal function]: {closure}()
+#2 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Slim.php(1355): Slim\Route->dispatch()
+#4 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#5 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Slim.php(1300): Slim\Middleware\MethodOverride->call()
+#7 C:\xampp\htdocs\compras\api\index.php(33): Slim\Slim->run()
+#8 {main}
+  thrown in C:\xampp\htdocs\compras\api\src\App\Controllers\ProdutoController.php on line 22
+[06-Feb-2018 21:06:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function toArray() on null in C:\xampp\htdocs\compras\api\src\App\Controllers\ProdutoController.php:22
+Stack trace:
+#0 C:\xampp\htdocs\compras\api\src\App\Routes\routes.php(14): Betha\Compras\App\Controllers\ProdutoController->adicionarProduto()
+#1 [internal function]: {closure}()
+#2 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Slim.php(1355): Slim\Route->dispatch()
+#4 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#5 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 C:\xampp\htdocs\compras\api\vendor\slim\slim\Slim\Slim.php(1300): Slim\Middleware\MethodOverride->call()
+#7 C:\xampp\htdocs\compras\api\index.php(33): Slim\Slim->run()
+#8 {main}
+  thrown in C:\xampp\htdocs\compras\api\src\App\Controllers\ProdutoController.php on line 22
